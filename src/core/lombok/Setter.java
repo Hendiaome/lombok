@@ -85,6 +85,14 @@ public @interface Setter {
 	AnyAnnotation[] onParam() default {};
 	
 	/**
+	 * If true, the generated setter will include an additional String parameter 'source' and store the source value in a sourceMap field.
+	 * The class must have a field named 'sourceMap' of type Map&lt;String, String&gt;.
+	 * 
+	 * @return Whether to track the source of the value being set.
+	 */
+	boolean trackSource() default false;
+	
+	/**
 	  * Placeholder annotation to enable the placement of annotations on the generated code.
 	  * @deprecated Don't use this annotation, ever - Read the documentation.
 	  */
